@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-tema="claro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Campo Aberto — catálogo de tecnologias sustentáveis que qualquer agricultor pode aplicar na própria terra, sem comprar equipamentos externos.">
+    <meta name="keywords" content="agrinho, tecnologia rural, sustentabilidade, agricultura familiar, terra preta, camalhões, paraná">
+    <meta name="agrinho" content="2026">
+    <title>Campo Aberto — Tecnologias para o Campo</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <a href="#catalogo" class="skip-link">Pular para o catálogo</a>
+
+    <!-- ===== NAV ===== -->
+    <nav class="nav" role="navigation" aria-label="Navegação principal">
+        <div class="nav-inner">
+            <a href="#hero" class="nav-logo" aria-label="Campo Aberto — início">
+                Campo Aberto
+            </a>
+            <div class="nav-centro">
+                <a href="#catalogo">Catálogo</a>
+                <a href="#compartilhar">Compartilhar</a>
+                <a href="#sobre">Sobre</a>
+            </div>
+            <div class="nav-acessib" role="group" aria-label="Controles de acessibilidade">
+                <button id="btn-zoom-menos" class="btn-nav-ctrl" aria-label="Diminuir fonte" title="Diminuir fonte" type="button">A-</button>
+                <button id="btn-zoom-mais"  class="btn-nav-ctrl" aria-label="Aumentar fonte" title="Aumentar fonte" type="button">A+</button>
+                <button id="btn-tema" class="btn-nav-ctrl btn-tema" aria-label="Alternar modo escuro" title="Modo escuro" type="button">Escuro</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <section id="hero" class="hero" aria-labelledby="hero-titulo">
+
+        <!-- padrão geométrico indígena marajoara como marca d'água -->
+        <div class="hero-padrao" aria-hidden="true">
+            <svg width="100%" height="100%" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <pattern id="pat-indigena" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                        <polygon points="40,4 76,40 40,76 4,40" fill="none" stroke="currentColor" stroke-width="1.2"/>
+                        <polygon points="40,16 64,40 40,64 16,40" fill="none" stroke="currentColor" stroke-width="0.9"/>
+                        <polygon points="40,26 54,40 40,54 26,40" fill="none" stroke="currentColor" stroke-width="0.6"/>
+                        <line x1="40" y1="4"  x2="40" y2="76" stroke="currentColor" stroke-width="0.5"/>
+                        <line x1="4"  y1="40" x2="76" y2="40" stroke="currentColor" stroke-width="0.5"/>
+                        <circle cx="40" cy="4"  r="2"   fill="currentColor"/>
+                        <circle cx="76" cy="40" r="2"   fill="currentColor"/>
+                        <circle cx="40" cy="76" r="2"   fill="currentColor"/>
+                        <circle cx="4"  cy="40" r="2"   fill="currentColor"/>
+                        <circle cx="40" cy="40" r="1.5" fill="currentColor"/>
+                        <circle cx="58" cy="22" r="1"   fill="currentColor"/>
+                        <circle cx="22" cy="22" r="1"   fill="currentColor"/>
+                        <circle cx="58" cy="58" r="1"   fill="currentColor"/>
+                        <circle cx="22" cy="58" r="1"   fill="currentColor"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#pat-indigena)"/>
+            </svg>
+        </div>
+
+        <div class="hero-conteudo">
+            <div class="hero-tag">Agrinho 2026</div>
+
+            <h1 id="hero-titulo">
+                Tecnologias que a<br>
+                <em>terra já conhece</em>
+            </h1>
+
+            <p class="hero-descricao">
+                Um catálogo aberto de práticas sustentáveis que qualquer agricultor pode aplicar — sem comprar de fora, sem agredir o meio ambiente. Da sabedoria indígena à inovação da agricultura familiar.
+            </p>
+
+            <div class="hero-filtro" role="search" aria-label="Filtrar tecnologias">
+                <label for="busca-hero" class="sr-only">Buscar tecnologia</label>
+                <div class="busca-wrap">
+                    <span class="busca-icon" aria-hidden="true"></span>
+                    <input type="search" id="busca-hero"
+                           placeholder="Buscar tecnologia... ex: água, solo, seca"
+                           aria-controls="catalogo-grid" autocomplete="off">
+                </div>
+                <div class="filtro-tags" role="group" aria-label="Filtrar por categoria">
+                    <button class="ftag ativo" data-cat="todos"      type="button">Todas</button>
+                    <button class="ftag"       data-cat="agua"       type="button">Água</button>
+                    <button class="ftag"       data-cat="solo"       type="button">Solo</button>
+                    <button class="ftag"       data-cat="floresta"   type="button">Floresta</button>
+                    <button class="ftag"       data-cat="energia"    type="button">Energia</button>
+                    <button class="ftag"       data-cat="comunidade" type="button">Comunidade</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ===== CATÁLOGO ===== -->
+    <section id="catalogo" class="secao" aria-labelledby="catalogo-titulo">
+        <div class="secao-inner">
+            <div class="catalogo-cabecalho">
+                <h2 id="catalogo-titulo">Catálogo de Tecnologias</h2>
+                <span id="catalogo-contagem" class="catalogo-contagem" aria-live="polite"></span>
+                <span class="credito-img">Imagens: Unsplash.com — licença gratuita de uso</span>
+            </div>
+
+            <div id="catalogo-grid" class="catalogo-grid" role="list" aria-label="Tecnologias sustentáveis" aria-live="polite">
+                <!-- cards gerados pelo JavaScript -->
+            </div>
+
+            <div id="catalogo-vazio" class="catalogo-vazio escondido" role="alert">
+                <span aria-hidden="true"></span>
+                <p>Nenhuma tecnologia encontrada com esses filtros.</p>
+                <button onclick="limparFiltros()" class="btn-sec" type="button">Ver todas</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MODAL DE DETALHES ===== -->
+    <div id="modal" class="modal escondido" role="dialog" aria-modal="true" aria-labelledby="modal-titulo">
+        <div class="modal-fundo" id="modal-fundo" aria-hidden="true"></div>
+        <div class="modal-caixa">
+            <button class="modal-fechar" id="modal-fechar" aria-label="Fechar detalhes" type="button">✕</button>
+            <div id="modal-conteudo" class="modal-conteudo"></div>
+        </div>
+    </div>
+
+    <!-- ===== COMPARTILHAR ===== -->
+    <section id="compartilhar" class="secao secao-compartilhar" aria-labelledby="comp-titulo">
+        <div class="secao-inner">
+            <div class="comp-header">
+                <div class="comp-tag" aria-hidden="true"> Sua vez</div>
+                <h2 id="comp-titulo">Compartilhe sua tecnologia</h2>
+                <p>Você usa alguma prática sustentável na sua terra? Compartilhe aqui — sua ideia pode ajudar outras famílias.</p>
+            </div>
+
+            <form id="form-tech" class="form-compartilhar" novalidate aria-label="Formulário de envio de tecnologia">
+
+                <div class="form-linha-dupla">
+                    <div class="campo-grupo">
+                        <label for="tech-nome">Nome da tecnologia <span class="obrig" aria-label="obrigatório">*</span></label>
+                        <input type="text" id="tech-nome" required aria-required="true"
+                               placeholder="Ex: Cisterna de calçadão"
+                               aria-describedby="erro-nome-tech">
+                        <span class="erro-campo escondido" id="erro-nome-tech" role="alert"> Informe um nome.</span>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="tech-cat">Categoria <span class="obrig" aria-label="obrigatório">*</span></label>
+                        <select id="tech-cat" required aria-required="true" aria-describedby="erro-cat-tech">
+                            <option value="">Selecione...</option>
+                            <option value="agua">Água</option>
+                            <option value="solo">Solo</option>
+                            <option value="floresta">Floresta</option>
+                            <option value="energia">Energia</option>
+                            <option value="comunidade">Comunidade</option>
+                        </select>
+                        <span class="erro-campo escondido" id="erro-cat-tech" role="alert"> Escolha uma categoria.</span>
+                    </div>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="tech-desc">O que é e para que serve <span class="obrig" aria-label="obrigatório">*</span></label>
+                    <textarea id="tech-desc" required aria-required="true"
+                              placeholder="Descreva a tecnologia: o que é, qual problema resolve e onde pode ser usada..."
+                              aria-describedby="erro-desc-tech contador-desc"></textarea>
+                    <div class="campo-rodape">
+                        <span class="erro-campo escondido" id="erro-desc-tech" role="alert"> Descreva a tecnologia.</span>
+                        <span id="contador-desc" class="contador-chars" aria-live="polite">0 / 300</span>
+                    </div>
+                </div>
+
+                <div class="campo-grupo">
+                    <label for="tech-como">Como fazer (passo a passo) <span class="obrig" aria-label="obrigatório">*</span></label>
+                    <textarea id="tech-como" required aria-required="true"
+                              placeholder="Liste o que precisa e como fazer, de forma simples..."
+                              aria-describedby="erro-como-tech"></textarea>
+                    <span class="erro-campo escondido" id="erro-como-tech" role="alert"> Explique como fazer.</span>
+                </div>
+
+                <div class="form-linha-dupla">
+                    <div class="campo-grupo">
+                        <label for="tech-dif">Dificuldade de execução</label>
+                        <select id="tech-dif">
+                            <option value="facil"> Fácil — qualquer pessoa</option>
+                            <option value="medio"> Médio — precisa de prática</option>
+                            <option value="dificil"> Exige planejamento</option>
+                        </select>
+                    </div>
+                    <div class="campo-grupo">
+                        <label for="tech-autor">Seu nome (opcional)</label>
+                        <input type="text" id="tech-autor" placeholder="Ex: Família Silva, Pato Branco">
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-enviar">
+                    <span aria-hidden="true"></span> Publicar no catálogo
+                </button>
+            </form>
+
+            <div id="msg-sucesso" class="msg-sucesso escondido" role="alert" aria-live="assertive"></div>
+        </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section id="sobre" class="secao secao-sobre" aria-labelledby="sobre-titulo">
+        <div class="secao-inner sobre-inner">
+            <div>
+                <div class="comp-tag" aria-hidden="true"> Sobre o projeto</div>
+                <h2 id="sobre-titulo">Por que este site existe</h2>
+                <p>Este catálogo nasceu de uma pergunta simples: por que precisamos importar soluções para problemas que o campo brasileiro já resolveu há séculos? Os povos indígenas da Amazônia desenvolveram tecnologias sofisticadas de manejo de água, solo e floresta sem agredir o meio ambiente — e essas soluções funcionam até hoje.</p>
+                <p>O Campo Aberto reúne essas tecnologias ancestrais junto com práticas modernas da agricultura familiar para que qualquer produtor possa acessar, aprender e compartilhar o que sabe.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ===== RODAPÉ ===== -->
+    <footer class="rodape" role="contentinfo">
+        <div class="rodape-inner">
+            <span class="rodape-logo"> Campo Aberto</span>
+            <p>Agrinho 2026 · Rebeka Noronha Soveral · Colégio Estadual Elza Scherner Moro</p>
+            <p class="rodape-sub">Imagens: Unsplash (licença gratuita — unsplash.com/license)</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
